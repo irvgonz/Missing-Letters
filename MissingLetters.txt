@@ -1,0 +1,21 @@
+//checks for a missing letter in  continuous string
+function fearNotLetter(str) {
+  
+  //loops that goes through every char in string
+  for (var i = 0; i < str.length; i++){
+    
+    //var for the SCII codes of each item in str
+    var codes = str.charCodeAt(i);
+    
+    //check if the first letter in str plus iteration matches the sequence in codes
+    if(codes !== str.charCodeAt(0) + i){
+      
+      //return the missing SCII code if char skips
+      return String.fromCharCode(codes - 1);
+    }
+  }
+  return undefined;
+}
+
+fearNotLetter("pqrsuv");
+
